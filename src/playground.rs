@@ -9,12 +9,12 @@ pub fn run() {
     let en1 = EnumEx::C(5);
     let en2 = EnumEx::D { x: 1, y: 2 };
     let x = 10;
-    sampleMatch(en1);
-    sampleMatch(en2);
+    sample_match(en1);
+    sample_match(en2);
 
     let z1 = None::<i32>;
     let z2: Option<i32> = None;
-    sampleOption(Some(x));
+    sample_option(Some(x));
 
     let input: i32 = 13;
     match h(input) {
@@ -26,7 +26,7 @@ pub fn run() {
     };
 }
 
-fn sampleMatch(ex: EnumEx) {
+fn sample_match(ex: EnumEx) {
     match ex {
         EnumEx::A | EnumEx::B => println!("EnumEx: A or B"),
         EnumEx::C(x) => println!("EnumEx: C - {}", x),
@@ -34,7 +34,7 @@ fn sampleMatch(ex: EnumEx) {
     }
 }
 
-fn sampleOption(nmb: Option<i32>) {
+fn sample_option(nmb: Option<i32>) {
     match nmb {
         None => println!("None"),
         Some(x) => println!("{}", x),
