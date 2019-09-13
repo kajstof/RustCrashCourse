@@ -8,12 +8,16 @@ enum EnumEx {
 pub fn run() {
     let en1 = EnumEx::C(5);
     let en2 = EnumEx::D { x: 1, y: 2 };
+    let mut en3 = EnumEx::A;
     let x = 10;
     sample_match(en1);
     sample_match(en2);
+    sample_match(en3);
+    en3 = EnumEx::B;
+    sample_match(en3);
 
-    let z1 = None::<i32>;
-    let z2: Option<i32> = None;
+    let _z1 = None::<i32>;
+    let _z2: Option<i32> = None;
     sample_option(Some(x));
 
     let input: i32 = 13;
