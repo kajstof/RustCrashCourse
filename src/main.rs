@@ -11,8 +11,9 @@
 // mod pointer_ref;
 // mod structs;
 // mod enums;
-mod cli;
+// mod cli;
 // mod options;
+mod playground;
 
 fn main() {
     // print::run();
@@ -28,6 +29,7 @@ fn main() {
     // pointer_ref::run();
     // structs::run();
     // enums::run();
-    cli::run();
+    // cli::run();
     // options::run();
+    playground::run();
 }
