@@ -17,10 +17,13 @@ pub fn run() {
     sampleOption(Some(x));
 
     let input: i32 = 13;
-    match h(input){
+    match h(input) {
         Ok(result) => println!("Result: {}", result),
         Err(e) => println!("Error: {}", e),
     }
+    if let Ok(i) = h(input) {
+        println!("if let example, i: {}", i)
+    };
 }
 
 fn sampleMatch(ex: EnumEx) {
@@ -31,8 +34,8 @@ fn sampleMatch(ex: EnumEx) {
     }
 }
 
-fn sampleOption(nmb: Option<i32>){
-    match nmb{
+fn sampleOption(nmb: Option<i32>) {
+    match nmb {
         None => println!("None"),
         Some(x) => println!("{}", x),
     }
@@ -41,6 +44,6 @@ fn sampleOption(nmb: Option<i32>){
 fn h(i: i32) -> Result<i32, String> {
     match i {
         i if i >= 0 => Ok(i + 10),
-        _ => Err(format!("Input to h less that 0, found: {}", i))
+        _ => Err(format!("Input to h less that 0, found: {}", i)),
     }
 }
