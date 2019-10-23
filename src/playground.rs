@@ -28,6 +28,22 @@ pub fn run() {
     if let Ok(i) = h(input) {
         println!("if let example, i: {}", i)
     };
+
+    let mut _sum = 0.0;
+    for i in 0..5 {
+        _sum += i as f64;
+    }
+
+    let res = sqr(2 as f64);
+    println!("Square is {}", res);
+
+    let i = 10;
+    let res1 = by_ref(&i);
+    let res2 = by_ref(&41);
+    println!("by_ref: {} {}", res1, res2);
+
+    let abc: i32 = 222;
+    println!("{}", abc);
 }
 
 fn sample_match(ex: EnumEx) {
@@ -50,4 +66,12 @@ fn h(i: i32) -> Result<i32, String> {
         i if i >= 0 => Ok(i + 10),
         _ => Err(format!("Input to h less that 0, found: {}", i)),
     }
+}
+
+fn sqr(x: f64) -> f64 {
+    x * x
+}
+
+fn by_ref(x: &i32) -> i32 {
+    *x + 1
 }
